@@ -1,0 +1,10 @@
+# Test 3: eight processes, mix of short and long jobs, varied priorities, one late arrival
+# PID  ARRIVAL  BURST  PRIORITY   (smaller priority number = higher priority)
+P1     0        10     3
+P2     1        1      1
+P3     2        2      4
+P4     3        1      5
+P5     4        5      2
+P6     6        3      1
+P7     8        12     5
+P8     30       2      2

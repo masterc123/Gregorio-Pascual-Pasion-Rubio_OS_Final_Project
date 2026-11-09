@@ -1,0 +1,20 @@
+# Unsafe example: P0 -> R1, P1 -> R2, P2 -> R0 is a circular wait. P3 holds nothing.
+processes 4
+resources 3
+allocation
+1 0 0
+0 1 0
+0 0 1
+0 0 0
+max
+1 1 0
+0 1 1
+1 0 1
+0 0 0
+request
+0 1 0
+0 0 1
+1 0 0
+0 0 0
+available
+0 0 0

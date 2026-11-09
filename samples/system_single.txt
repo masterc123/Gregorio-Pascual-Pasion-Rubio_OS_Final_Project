@@ -1,0 +1,9 @@
+# Edge case: a single process
+processes 1
+resources 2
+allocation
+1 0
+max
+3 2
+available
+2 2

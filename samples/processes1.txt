@@ -1,0 +1,6 @@
+# Test 1: four processes with overlapping arrivals (hand-checked in tests/)
+# PID  ARRIVAL  BURST  PRIORITY   (smaller priority number = higher priority)
+P1     0        8      3
+P2     1        4      1
+P3     2        9      4
+P4     3        5      2

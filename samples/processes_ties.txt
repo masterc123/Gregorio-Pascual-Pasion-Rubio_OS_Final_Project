@@ -1,0 +1,4 @@
+# Test 4: everyone arrives at time 0 with equal bursts/priorities (tie-breaking by input order)
+A 0 3 2
+B 0 3 2
+C 0 3 2

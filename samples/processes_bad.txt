@@ -1,0 +1,2 @@
+# Error case: negative burst time
+P1 0 -4 1

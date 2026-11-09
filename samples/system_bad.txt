@@ -1,0 +1,6 @@
+# Error case: matrix has too few numbers
+processes 2
+resources 2
+allocation
+1 0
+0

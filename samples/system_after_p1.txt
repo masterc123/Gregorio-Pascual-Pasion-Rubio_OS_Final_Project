@@ -1,0 +1,20 @@
+# The textbook state AFTER P1's request (1,0,2) was granted.
+# Use it to see a request that is DENIED:
+#   deadlock banker samples/system_after_p1.txt --request 0 0 2 0   -> unsafe, denied
+#   deadlock banker samples/system_after_p1.txt --request 4 3 3 0   -> not enough available, must wait
+processes 5
+resources 3
+allocation
+0 1 0
+3 0 2
+3 0 2
+2 1 1
+0 0 2
+max
+7 5 3
+3 2 2
+9 0 2
+2 2 2
+4 3 3
+available
+2 3 0
