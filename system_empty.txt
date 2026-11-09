@@ -1,0 +1,7 @@
+# Edge case: no processes at all
+processes 0
+resources 2
+allocation
+max
+available
+4 4

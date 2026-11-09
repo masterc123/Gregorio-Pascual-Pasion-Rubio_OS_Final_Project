@@ -1,0 +1,2 @@
+# Edge case: a single process that arrives late (CPU idles first)
+P1 5 3 1

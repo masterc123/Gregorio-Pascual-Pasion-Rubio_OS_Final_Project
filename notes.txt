@@ -1,0 +1,7 @@
+MiniShell sample text
+the scheduler uses a Gantt chart
+Deadlock needs four conditions
+mutual exclusion, hold and wait, no preemption, circular wait
+error: disk full
+Error: file not found
+phone 555-1234 and 555-9876

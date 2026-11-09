@@ -1,0 +1,65 @@
+# ============================================================================
+# CmpSc 123 Project: MiniShell Complete 4-Member Group Demo Script (demo.msh)
+# Run with: python3 minishell.py demo.msh
+# ============================================================================
+
+echo "======================================================================"
+echo "  MEMBER 1 (SHELL LEAD): SHELL CORE, REDIRECTION, PIPES & VARIABLES   "
+echo "======================================================================"
+pwd
+mkdir -p demo_workspace
+cd demo_workspace
+touch report.txt notes.txt script.sh image.png
+chmod 755 script.sh
+chmod 640 report.txt
+ls -l
+
+echo "Process_A arrival=0 burst=5" > report.txt
+echo "Process_B arrival=2 burst=3" >> report.txt
+cat < report.txt
+cat missing_file.txt 2> error.log
+cat error.log
+
+ls | grep txt
+COURSE=CmpSc123
+GROUP="MiniShell Team"
+echo "Course: $COURSE | Team: $GROUP"
+true && echo "Conditional && succeeded!"
+false || echo "Conditional || fallback triggered!"
+if grep Process_A report.txt > /dev/null; then echo "Bonus if/then/else found Process_A!"; else echo "Not found"; fi
+
+cd ..
+rm -rf demo_workspace
+
+echo ""
+echo "======================================================================"
+echo "  MEMBER 2 (SCHEDULER LEAD): CPU PROCESS SCHEDULING (sched)           "
+echo "======================================================================"
+sched fcfs samples/processes1.txt
+sched sjn --preemptive --trace --at 3 samples/processes1.txt
+sched priority samples/processes1.txt
+sched rr --quantum 4 samples/processes1.txt
+sched mlq --quantum 4 samples/processes2.txt
+sched mlfq --quantum 4 samples/processes3.txt
+
+echo ""
+echo "======================================================================"
+echo "  MEMBER 3 (RESOURCES LEAD - GREGORIO): DEADLOCK & BANKER'S ALGORITHM "
+echo "======================================================================"
+deadlock banker samples/system_safe.txt
+deadlock banker samples/system_safe.txt --request 1 1 0 2
+deadlock banker samples/system_after_p1.txt --request 0 0 2 0
+deadlock detect samples/system_deadlock.txt
+deadlock banker < samples/system_single.txt
+
+echo ""
+echo "======================================================================"
+echo "  MEMBER 4 (DOCS & TESTING LEAD): GREP REGEX/GROUPS & MODULE 4 COMPARE"
+echo "======================================================================"
+grep -n -i deadlock samples/notes.txt
+grep -E "[0-9]+-[0-9]+" samples/notes.txt
+grep -oE "[0-9]+-[0-9]+" samples/notes.txt
+grep -E --groups "([0-9]+)-([0-9]+)" samples/notes.txt
+compare --quantum 4 samples/processes1.txt
+compare --quantum 4 samples/processes2.txt
+compare --quantum 2 samples/processes3.txt
